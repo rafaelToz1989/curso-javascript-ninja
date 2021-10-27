@@ -2,7 +2,7 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-var randomArray = ['Rafael', 32, true, 1.69, 'Quero ser ninja!', '85kg', null, undefined];
+var randomArray = ['Rafael', 32, true, 1.69, 'Quero ser ninja!', '85kg', null, undefined, function() {} ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
@@ -22,8 +22,8 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-function mixedTypeValues(array, number){
-    return array[number];
+function mixedTypeValues(array, index){
+    return array[index];
 }
 
 /*
@@ -63,7 +63,7 @@ function book(bookName) {
             autor: 'Robert C. Martin',
             editora: 'Alta Books'
         },
-        'Dracula': {
+        'Drácula': {
             quantidadePaginas: 472,
             autor: 'Bram Stoker',
             editora: 'Nova Fronteira'
@@ -73,7 +73,7 @@ function book(bookName) {
             autor: 'Matt Ruff',
             editora: 'Intrinseca'
         }
-    }
+    };
 
     return !bookName ? bookList : bookList[bookName];
 }
@@ -88,18 +88,21 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro "Dracula" tem ' + book('Dracula').quantidadePaginas + ' páginas!');
+var bookName = 'Drácula'; 
+console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro "Clean Code" é ' + book('Clean Code').autor + '.');
+var bookName2 = 'Clean Code';
+console.log('O autor do livro ' + bookName2 + ' é ' + book(bookName2).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro "Lovecraft Country" foi publicado pela editora ' + book('Lovecraft Country').editora + '.');
+var bookName3 = 'Lovecraft Country';
+console.log('O livro ' + bookName3 + ' foi publicado pela editora ' + book(bookName3).editora + '.');
